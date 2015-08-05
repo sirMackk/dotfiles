@@ -1,0 +1,9 @@
+export PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\\[\e[1;33m\]\$\[\e[m\] "
+alias tmux="tmux -2"
+shopt -s checkwinsize
+
+$HOME/quotes.sh
+export HISTFILESIZE=20000
+
+
+source ~/.profile

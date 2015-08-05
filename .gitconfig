@@ -1,0 +1,13 @@
+[include]
+  path = ~/.gituserconfig
+[core]
+	editor = vim
+[color "diff"]
+  meta = green reverse
+  frag = yellow bold
+  old = red bold
+  new = cyan bold
+[color "status"]
+  untracked = yellow
+  added = cyan reverse
+  changed = green reverse
