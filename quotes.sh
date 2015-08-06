@@ -5,6 +5,8 @@ fonts=(smbraille wideterm future)
 
 lc=$((($RANDOM % $(wc -l $HOME/quotes | cut -f1 -d" ")) + 1))
 words=$(sed -n "${lc}p" $HOME/quotes)
-echo -e $words | toilet -t -f ${fonts[$(($RANDOM % ${#fonts[@]}))]}
-
-
+if type toiler > /dev/null 2>&1; then
+  echo -e $words | toilet -t -f ${fonts[$(($RANDOM % ${#fonts[@]}))]}
+else
+  echo -e $words
+fi

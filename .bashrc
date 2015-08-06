@@ -117,12 +117,12 @@ if ! shopt -oq posix; then
 fi
 
 alias tmux="tmux -2"
+alias fuck='sudo $(history -p \!\!)'
 
 function cd() {
   builtin cd "$@" && if [ -d ".git" ]; then echo -e "on git branch \e[1;32m$(git rev-parse --abbrev-ref HEAD)\e[0m"; fi
 }
 
 shopt -s checkwinsize
-alias fuck='sudo $(history -p \!\!)'
 set -o vi
 export EDITOR=vim
