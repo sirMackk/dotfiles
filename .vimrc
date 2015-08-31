@@ -43,7 +43,8 @@ set autoindent
 set laststatus=2
 
 "color calmar256-dark
-color twilight256
+"color twilight256
+color gruvbox
 set background=dark
 set encoding=utf8
 set smarttab
