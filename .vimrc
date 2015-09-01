@@ -147,9 +147,9 @@ augroup END
     "end
 "endfunction
 
-"function! GoRun()
-    "exec "w !go run %"
-"endfunction
+function! GoRun()
+    exec "w !go run %"
+endfunction
 
 "function! LeinTest()
     "exec "!lein test"
@@ -180,7 +180,7 @@ endfunc
 map <leader>m :call NumberToggle()<cr>
 map <leader>s :call WhitespaceToggle()<cr>
 ":command -nargs=1 RakeRoutes call RakeRoutesDo("<args>")
-":command -nargs=0 GO call GoRun()
+:command -nargs=0 GO call GoRun()
 ":command -nargs=0 TRIM call Trim()
 
 set synmaxcol=160
