@@ -172,6 +172,10 @@ function! NumberToggle()
   endif
 endfunc
 
+function! YapfDiff()
+  exec "!yapf -d %"
+endfunc
+
 "map <leader>t :call RunTestFile()<cr>
 "map <leader>T :call RunNearestTest()<cr>
 "map <leader>a :call RunTests('')<cr>
@@ -179,6 +183,8 @@ endfunc
 "map <leader>l :call LeinTest()<cr>
 map <leader>m :call NumberToggle()<cr>
 map <leader>s :call WhitespaceToggle()<cr>
+map <leader>a :call yapf#YAPF()<cr>
+map <leader>q :call YapfDiff()<cr>
 ":command -nargs=1 RakeRoutes call RakeRoutesDo("<args>")
 ":command -nargs=0 GO call GoRun()
 ":command -nargs=0 TRIM call Trim()
