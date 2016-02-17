@@ -24,7 +24,9 @@ Plugin 'vim-scripts/django.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'avakhov/vim-yaml'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'saltstack/salt-vim'
+Plugin 'hdima/python-syntax'
 call vundle#end()
 filetype plugin indent on
 
@@ -190,6 +192,7 @@ map <F3> :RainbowParenthesesToggle<CR>
 set switchbuf+=newtab
 set pastetoggle=<F2>
 let g:ctrlp_custom_ignore = 'node_modules\|git'
+let g:ctrlp_root_markers = ['setup.py', 'LICENSE']
 set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
 set wildignore+=**/bower_components/**
