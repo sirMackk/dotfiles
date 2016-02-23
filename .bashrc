@@ -118,6 +118,10 @@ fi
 
 alias tmux="tmux -2"
 
+function weather() {
+  curl "wttr.in/${@:-berlin}";
+}
+
 function cd() {
   builtin cd "$@" && if [ -d ".git" ]; then echo -e "on git branch \e[1;32m$(git rev-parse --abbrev-ref HEAD)\e[0m"; fi
 }
