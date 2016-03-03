@@ -27,6 +27,7 @@ Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'saltstack/salt-vim'
 Plugin 'hdima/python-syntax'
+Plugin 'ntpeters/vim-better-whitespace'
 call vundle#end()
 filetype plugin indent on
 
