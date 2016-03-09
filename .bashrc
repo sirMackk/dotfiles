@@ -118,6 +118,8 @@ fi
 
 alias tmux="tmux -2"
 
+alias dockerclean="docker ps -aq -f status=exited | xargs docker rm -v"
+
 function weather() {
   curl "wttr.in/${@:-berlin}";
 }
