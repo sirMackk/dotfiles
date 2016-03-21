@@ -28,6 +28,9 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'saltstack/salt-vim'
 Plugin 'hdima/python-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'xolox/vim-misc' " dependency of vim-easytags
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -181,21 +184,28 @@ map <leader>m :call NumberToggle()<cr>
 map <leader>s :call WhitespaceToggle()<cr>
 map <leader>a :call yapf#YAPF()<cr>
 map <leader>q :call YapfDiff()<cr>
+nnoremap <Leader>b :TagbarToggle<CR>
+
 ":command -nargs=1 RakeRoutes call RakeRoutesDo("<args>")
-:command -nargs=0 GO call GoRun()
+":command -nargs=0 GO call GoRun()
 ":command -nargs=0 TRIM call Trim()
 
-set synmaxcol=160
+set synmaxcol=180
 set lazyredraw
 
 set pastetoggle=<F4>
 map <F3> :RainbowParenthesesToggle<CR>
 set switchbuf+=newtab
 set pastetoggle=<F2>
+" CtrlP Stuff
 let g:ctrlp_custom_ignore = 'node_modules\|git'
 let g:ctrlp_root_markers = ['setup.py', 'LICENSE']
+nnoremap <leader>o :CtrlPTag<cr>
+
 set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
 set wildignore+=**/bower_components/**
+
+:let g:easytags_file = '~/.vim/tags'
 
 highlight Pmenu ctermfg=white ctermbg=darkgreen guifg=#000000 guibg=#0000ff
