@@ -25,12 +25,13 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'saltstack/salt-vim'
-Plugin 'hdima/python-syntax'
+"Plugin 'saltstack/salt-vim'
+"Plugin 'hdima/python-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'xolox/vim-misc' " dependency of vim-easytags
-Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
+Plugin 'isRuslan/vim-es6'
+"Plugin 'xolox/vim-misc'  dependency of vim-easytags
+"Plugin 'xolox/vim-easytags'
+"Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -63,18 +64,20 @@ augroup vimrcEx
     \ endif
 
   "for ruby, autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,haml,eruby,yaml,javascript,sass,cucumber set ai sw=2 sts=2 et
+  autocmd FileType ruby,haml,eruby,yaml,javascript,sass,cucumber,scss set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
-  autocmd FileType html setl sw=4 sts=4 et
+  autocmd FileType html setl sw=2 sts=2 et
   autocmd FileType sls setl sw=3 sts=3 et
+  autocmd FileType less setl sw=2 sts=2 et
+  autocmd FileType c setl sw=4 sts=4 et
 
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
 
   " Indent p tags
-  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+"  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
@@ -199,13 +202,21 @@ set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
 let g:ctrlp_custom_ignore = 'node_modules\|git'
-let g:ctrlp_root_markers = ['setup.py', 'LICENSE']
+let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md']
 nnoremap <leader>o :CtrlPTag<cr>
 
 set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
 set wildignore+=**/bower_components/**
 
-:let g:easytags_file = '~/.vim/tags'
+" Easytags stuff
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_syntax_keyword = 'always'
+let g:easytags_python_enabled = 1
+set regexpengine=0
 
 highlight Pmenu ctermfg=white ctermbg=darkgreen guifg=#000000 guibg=#0000ff
+
+" Spelling related
+map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+highlight SpellBad ctermfg=White ctermbg=Green
