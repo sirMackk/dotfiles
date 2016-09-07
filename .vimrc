@@ -29,9 +29,9 @@ Plugin 'elixir-lang/vim-elixir'
 "Plugin 'hdima/python-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'isRuslan/vim-es6'
-"Plugin 'xolox/vim-misc'  dependency of vim-easytags
-"Plugin 'xolox/vim-easytags'
-"Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'  " dependency of vim-easytags
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -201,7 +201,7 @@ map <F3> :RainbowParenthesesToggle<CR>
 set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
-let g:ctrlp_custom_ignore = 'node_modules\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|git\|.*.pyc'
 let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md']
 nnoremap <leader>o :CtrlPTag<cr>
 
@@ -220,3 +220,6 @@ highlight Pmenu ctermfg=white ctermbg=darkgreen guifg=#000000 guibg=#0000ff
 " Spelling related
 map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 highlight SpellBad ctermfg=White ctermbg=Green
+
+" Syntastic Checkers
+let g:syntastic_c_checkers = ['gcc']
