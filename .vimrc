@@ -28,10 +28,10 @@ Plugin 'elixir-lang/vim-elixir'
 "Plugin 'saltstack/salt-vim'
 "Plugin 'hdima/python-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'isRuslan/vim-es6'
-Plugin 'xolox/vim-misc'  " dependency of vim-easytags
-Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
+"Plugin 'isRuslan/vim-es6'
+"Plugin 'xolox/vim-misc'  " dependency of vim-easytags
+"Plugin 'xolox/vim-easytags'
+"Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -223,3 +223,8 @@ highlight SpellBad ctermfg=White ctermbg=Green
 
 " Syntastic Checkers
 let g:syntastic_c_checkers = ['gcc']
+
+" Macros and small scripts
+"
+
+let @p = "Oimport pdb; pdb.set_trace()"
