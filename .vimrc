@@ -29,9 +29,9 @@ Plugin 'elixir-lang/vim-elixir'
 "Plugin 'hdima/python-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
 "Plugin 'isRuslan/vim-es6'
-"Plugin 'xolox/vim-misc'  " dependency of vim-easytags
-"Plugin 'xolox/vim-easytags'
-"Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'  " dependency of vim-easytags
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -201,18 +201,23 @@ map <F3> :RainbowParenthesesToggle<CR>
 set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
-let g:ctrlp_custom_ignore = 'node_modules\|git\|.*.pyc'
+let g:ctrlp_custom_ignore = 'node_modules\|git\|.*.pyc\|_build\|deps'
 let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md']
 nnoremap <leader>o :CtrlPTag<cr>
 
 set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
 set wildignore+=**/bower_components/**
+set wildignore+=**/deps/**
+set wildignore+=**/_build/**
 
 " Easytags stuff
 let g:easytags_file = '~/.vim/tags'
 let g:easytags_syntax_keyword = 'always'
 let g:easytags_python_enabled = 1
+let g:easytags_async = 1
+let g:easytags_auto_highlight = 0
+let g:easytags_opts = ['--fields=+l']
 set regexpengine=0
 
 highlight Pmenu ctermfg=white ctermbg=darkgreen guifg=#000000 guibg=#0000ff
