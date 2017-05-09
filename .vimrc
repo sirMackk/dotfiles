@@ -32,6 +32,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'xolox/vim-misc'  " dependency of vim-easytags
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
+Plugin 'morhetz/gruvbox'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -175,7 +177,7 @@ function! NumberToggle()
 endfunc
 
 function! YapfDiff()
-  exec "!yapf -d %"
+  exec "!yapf --style google -d %"
 endfunc
 
 "map <leader>t :call RunTestFile()<cr>
