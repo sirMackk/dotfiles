@@ -74,6 +74,7 @@ augroup vimrcEx
   autocmd FileType c setl sw=4 sts=4 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
+  autocmd! BufRead,BufNewFile *.ngt setfiletype html
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -177,7 +178,7 @@ function! NumberToggle()
 endfunc
 
 function! YapfDiff()
-  exec "!yapf --style google -d %"
+  exec "!yapf -d %"
 endfunc
 
 "map <leader>t :call RunTestFile()<cr>
