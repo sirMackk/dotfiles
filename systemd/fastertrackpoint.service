@@ -1,0 +1,11 @@
+[Unit]
+Description=Set comfortable values for thinkpad trackpoint
+
+[Service]
+Type=oneshot
+ExecStart=/opt/trackpoint_set.sh
+RemainAfterExit=true
+StandardOutput=journal
+
+[Install]
+WantedBy=graphical.target

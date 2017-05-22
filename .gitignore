@@ -14,3 +14,4 @@
 !spark
 !.ctags
 !.gitignore_global
+!systemd/*
