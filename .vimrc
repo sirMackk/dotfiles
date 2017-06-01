@@ -178,7 +178,7 @@ function! NumberToggle()
 endfunc
 
 function! YapfDiff()
-  exec "!yapf -d %"
+  exec "!yapf --style google -d %"
 endfunc
 
 "map <leader>t :call RunTestFile()<cr>
@@ -235,4 +235,4 @@ let g:syntastic_c_checkers = ['gcc']
 " Macros and small scripts
 "
 
-let @p = "Oimport pdb; pdb.set_trace()"
+let @p = "Oimport pdb; pdb.set_trace()  # noqa E702"
