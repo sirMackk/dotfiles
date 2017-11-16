@@ -118,10 +118,14 @@ alias dockerclean_images="docker images --no-trunc | grep '<none>' | awk '{ prin
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias pyv='pyenv virtualenvwrapper'
+alias pyv='pyenv virtualenvwrapper && workon'
+
+function wordspell() {
+  echo "$1" | aspell --pipe
+}
 
 function weather() {
-  curl "wttr.in/${@:-berlin}";
+  curl "wttr.in/${@:-new york}";
 }
 
 function cd() {
