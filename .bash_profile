@@ -7,3 +7,6 @@ export HISTFILESIZE=20000
 
 
 source ~/.profile
+export PATH="/home/matt/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

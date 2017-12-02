@@ -22,4 +22,3 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh

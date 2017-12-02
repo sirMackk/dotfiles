@@ -205,7 +205,7 @@ set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
 let g:ctrlp_custom_ignore = 'node_modules\|git\|.*.pyc\|_build\|deps'
-let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md']
+let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md', '.git']
 nnoremap <leader>o :CtrlPTag<cr>
 
 set wildignore+=**/node_modules/**
