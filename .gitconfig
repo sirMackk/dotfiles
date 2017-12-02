@@ -2,7 +2,7 @@
   path = ~/.gituserconfig
 [core]
 	editor = vim
-	excludesfile = /home/matto/.gitignore_global
+	excludesfile = /home/matt/.gitignore_global
 [color "diff"]
   meta = green reverse
   frag = yellow bold

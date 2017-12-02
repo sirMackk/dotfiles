@@ -136,9 +136,3 @@ shopt -s checkwinsize
 alias fuck='sudo $(history -p \!\!)'
 set -o vi
 export EDITOR=vim
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-### spotify-hermes-tools
-export PATH="/home/matto/code/hermes/tools/bin:$PATH"
