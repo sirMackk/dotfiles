@@ -18,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/django.vim'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -34,13 +34,14 @@ Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'adelarsq/vim-matchit'
 call vundle#end()
 filetype plugin indent on
 
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set autoindent
 set laststatus=2
 
@@ -52,7 +53,6 @@ set encoding=utf8
 set smarttab
 set number
 set ignorecase smartcase
-set autoindent
 set cursorline
 
 augroup vimrcEx
