@@ -156,6 +156,10 @@ function! GoRun()
     exec "w !go run %"
 endfunction
 
+function! GoFmt()
+    exec "!go fmt %"
+endfunction
+
 "function! LeinTest()
     "exec "!lein test"
 "endfunction

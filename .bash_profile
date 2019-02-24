@@ -3,7 +3,7 @@ alias tmux="tmux -2"
 shopt -s checkwinsize
 
 $HOME/quotes.sh
-export HISTFILESIZE=20000
+export HISTFILESIZE=2000000
 
 
 source ~/.profile
