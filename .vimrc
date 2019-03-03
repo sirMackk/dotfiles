@@ -72,6 +72,7 @@ augroup vimrcEx
   autocmd FileType sls setl sw=3 sts=3 et
   autocmd FileType less setl sw=2 sts=2 et
   autocmd FileType c setl sw=4 sts=4 et
+  autocmd FileType go setlocal noet ts=4 sw=4 sts=4
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
   autocmd! BufRead,BufNewFile *.ngt setfiletype html
