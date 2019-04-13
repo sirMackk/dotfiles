@@ -137,3 +137,7 @@ shopt -s checkwinsize
 alias fuck='sudo $(history -p \!\!)'
 set -o vi
 export EDITOR=vim
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

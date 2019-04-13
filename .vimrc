@@ -209,8 +209,8 @@ map <F3> :RainbowParenthesesToggle<CR>
 set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
-let g:ctrlp_custom_ignore = 'node_modules\|git\|.*.pyc\|_build\|deps'
-let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md', '.git']
+let g:ctrlp_custom_ignore = 'node_modules\|.git$\|.*.pyc\|_build\|deps\|vendor'
+let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md', '.git', 'Gopkg.lock']
 nnoremap <leader>o :CtrlPTag<cr>
 
 set wildignore+=**/node_modules/**
@@ -227,6 +227,17 @@ let g:easytags_async = 1
 let g:easytags_auto_highlight = 0
 let g:easytags_opts = ['--fields=+l']
 set regexpengine=0
+
+let g:tagbar_type_go = {
+    \ 'ctagstype': 'go',
+    \ 'kinds' : [
+        \'p:package',
+        \'f:function',
+        \'v:variables',
+        \'t:type',
+        \'c:const'
+    \]
+\}
 
 highlight Pmenu ctermfg=white ctermbg=darkgreen guifg=#000000 guibg=#0000ff
 
