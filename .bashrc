@@ -138,6 +138,9 @@ alias fuck='sudo $(history -p \!\!)'
 set -o vi
 export EDITOR=vim
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
+#export GOROOT=/usr/local/go
+#export GOPATH=$HOME/go
+GOROOT=/usr/lib/go-1.13
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+export GPG_TTY=$(tty)
