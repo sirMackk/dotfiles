@@ -10,14 +10,17 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreedups:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# save bash history between tmux panes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=
-HISTFILESIZE=
+HISTSIZE=100000
+HISTFILESIZE=100000
 HISTTIMEFORMAT="%m/%d/%y %T "
 
 # check the window size after each command and, if necessary,
@@ -138,9 +141,11 @@ alias fuck='sudo $(history -p \!\!)'
 set -o vi
 export EDITOR=vim
 
-#export GOROOT=/usr/local/go
-#export GOPATH=$HOME/go
-GOROOT=/usr/lib/go-1.13
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export GPG_TTY=$(tty)
+
+# kubectl
+source <(kubectl completion bash)

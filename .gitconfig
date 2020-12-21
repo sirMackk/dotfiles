@@ -12,3 +12,5 @@
   untracked = yellow
   added = cyan reverse
   changed = green reverse
+[user]
+	email = matt@mattscodecave.com

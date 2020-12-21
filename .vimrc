@@ -12,29 +12,26 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'preservim/nerdcommenter'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/django.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'avakhov/vim-yaml'
-Plugin 'elixir-lang/vim-elixir'
-"Plugin 'saltstack/salt-vim'
-"Plugin 'hdima/python-syntax'
 Plugin 'ntpeters/vim-better-whitespace'
-"Plugin 'isRuslan/vim-es6'
 Plugin 'xolox/vim-misc'  " dependency of vim-easytags
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'adelarsq/vim-matchit'
+Plugin 'junegunn/goyo.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'google/yapf', { 'rtp': 'plugins/vim' }
 call vundle#end()
 filetype plugin indent on
 
@@ -73,9 +70,11 @@ augroup vimrcEx
   autocmd FileType less setl sw=2 sts=2 et
   autocmd FileType c setl sw=4 sts=4 et
   autocmd FileType go setlocal noet ts=4 sw=4 sts=4
+  autocmd FileType wiki setlocal linebreak
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
   autocmd! BufRead,BufNewFile *.ngt setfiletype html
+  autocmd! BufRead,BufNewFile *.wiki setfiletype wiki
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -196,20 +195,23 @@ map <leader>s :call WhitespaceToggle()<cr>
 map <leader>a :call yapf#YAPF()<cr>
 map <leader>q :call YapfDiff()<cr>
 nnoremap <Leader>b :TagbarToggle<CR>
+nmap <leader>D <plug>(YCMHover)
+"
+" Copy from vim buffer
+vnoremap <leader>c :w !xclip -i -sel c<cr><cr>
 
 ":command -nargs=1 RakeRoutes call RakeRoutesDo("<args>")
 ":command -nargs=0 GO call GoRun()
 ":command -nargs=0 TRIM call Trim()
 
-set synmaxcol=180
+set synmaxcol=250
 set lazyredraw
 
-set pastetoggle=<F4>
 map <F3> :RainbowParenthesesToggle<CR>
 set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
-let g:ctrlp_custom_ignore = 'node_modules\|.git$\|.*.pyc\|_build\|deps\|vendor'
+let g:ctrlp_custom_ignore = 'node_modules\|.git$\|.*.pyc$\|_build\|deps$\|vendor$'
 let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md', '.git', 'Gopkg.lock']
 nnoremap <leader>o :CtrlPTag<cr>
 
@@ -239,6 +241,10 @@ let g:tagbar_type_go = {
     \]
 \}
 
+" YCM
+let g:ycm_auto_hover=''
+
+
 highlight Pmenu ctermfg=white ctermbg=darkgreen guifg=#000000 guibg=#0000ff
 
 " Spelling related
@@ -252,3 +258,7 @@ let g:syntastic_c_checkers = ['gcc']
 "
 
 let @p = "Oimport pdb; pdb.set_trace()  # noqa E702"
+let @d = "i\<c-r>=strftime('%c')\<cr>\<esc>"
+
+map <F5> :Goyo<cr>
+let g:vimwiki_list = [{'syntax': 'markdown'}]
