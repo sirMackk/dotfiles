@@ -22,3 +22,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export WORKON_HOME=$HOME/.virtualenvs
+source "$HOME/.cargo/env"

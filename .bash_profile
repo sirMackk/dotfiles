@@ -10,3 +10,4 @@ source ~/.profile
 export PATH="/home/matt/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+source "$HOME/.cargo/env"

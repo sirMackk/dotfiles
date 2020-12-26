@@ -122,7 +122,7 @@ alias dockerclean_images="docker images --no-trunc | grep '<none>' | awk '{ prin
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias pyv='pyenv virtualenvwrapper && workon'
+alias pyv='pyenv activate'
 
 function wordspell() {
   echo "$1" | aspell --pipe
@@ -149,3 +149,4 @@ export GPG_TTY=$(tty)
 
 # kubectl
 source <(kubectl completion bash)
+source "$HOME/.cargo/env"

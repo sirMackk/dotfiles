@@ -26,7 +26,9 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'xolox/vim-misc'  " dependency of vim-easytags
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
+" Colorschemes
 Plugin 'morhetz/gruvbox'
+Plugin 'franbach/miramare'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'adelarsq/vim-matchit'
 Plugin 'junegunn/goyo.vim'
@@ -212,7 +214,7 @@ set switchbuf+=newtab
 set pastetoggle=<F2>
 " CtrlP Stuff
 let g:ctrlp_custom_ignore = 'node_modules\|.git$\|.*.pyc$\|_build\|deps$\|vendor$'
-let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md', '.git', 'Gopkg.lock']
+let g:ctrlp_root_markers = ['setup.py', 'LICENSE', 'README.md', '.git', 'Gopkg.lock', 'Cargo.toml']
 nnoremap <leader>o :CtrlPTag<cr>
 
 set wildignore+=**/node_modules/**
